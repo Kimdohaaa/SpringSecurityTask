@@ -31,7 +31,12 @@ public class JoinController {
 
         System.out.println(">>> 회원가입 결과 : " + result);
 
-        return  "redirect:/login"; // 로그인페이지로 리다이렉팅
+        if(result) {
+
+            return "redirect:/login"; // 로그인페이지로 리다이렉팅
+        }else {
+            return "join"; // 회원가입 실패 시 회원가입페이지 반환
+        }
     }
 
 }
