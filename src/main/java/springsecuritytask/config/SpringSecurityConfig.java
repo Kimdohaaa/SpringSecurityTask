@@ -43,7 +43,7 @@ public class SpringSecurityConfig { // SpringSecurity 인가, 검증 을 커스�
                 .permitAll() // 모든 사용자 접근 가능
         );
         
-        // 토큰 임시로 끄기
+        // 토큰 사용 X
         http.csrf((auth) -> auth.disable());
         
         return http.build();
