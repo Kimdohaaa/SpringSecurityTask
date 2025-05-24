@@ -32,7 +32,15 @@ public class SpringSecurityConfig { // SpringSecurity 인가, 검증 을 커스�
         // 로그인 페이지 설정
         http.formLogin((auth) -> auth.loginPage("/login")
                 .loginProcessingUrl("/loginProc")// 로그인 HTML 파일을 통해 사용자에게 입력 받은 정보를 지정한 경로로 보냄
+                .defaultSuccessUrl("/mypage", true) // 로그인 성공 시 이동할 경로
                 .permitAll()
+        );
+
+        // 로그아웃 페이지 설정
+        http.logout((logout) -> logout
+                .logoutUrl("/logout")
+                .logoutSuccessUrl("/join") // 로그아웃 성공 후 이동할 경로
+                .permitAll() // 모든 사용자 접근 가능
         );
         
         // 토큰 임시로 끄기
