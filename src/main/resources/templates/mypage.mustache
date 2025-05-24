@@ -1,0 +1,26 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>마이페이지</title>
+</head>
+<body>
+    MyPage
+    <p>이메일: {{useremail}}</p>
+    <p>이름: {{username}}</p>
+    <p>권한 : {{role}}</p>
+    <!-- 관리자 일 경우 (AdminController 로 )-->
+    {{#isAdmin}}
+        <form action="/admin" method="get">
+            <button type="submit">관리자 페이지</button>
+        </form>
+    {{/isAdmin}}
+    <!-- 회원 일 경우 (MainController 로) -->
+    {{^isAdmin}}
+        <form action="/" method="get">
+            <button type="submit">회원 페이지</button>
+        </form>
+    {{/isAdmin}}
+
+</body>
+</html>
