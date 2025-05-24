@@ -48,7 +48,7 @@ public class JoinService {
         userDTO.setUserpassword(bCryptPasswordEncoder.encode(userDTO.getUserpassword()));
 
         // 권한부여
-        userDTO.setRole("ROLE_USER"); // 임시로 관리자 권한 부여
+        userDTO.setRole("ROLE_USER"); // 기본 권한으로 USER 부여
 
         // DTO -> Entity
         UserEntity userEntity = userDTO.toEntity();
